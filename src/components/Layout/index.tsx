@@ -1,3 +1,5 @@
+import { Header } from '~/components/Header';
+
 type Props = {
   children: React.ReactNode;
 };
@@ -5,7 +7,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <header>Header</header>
+      <Header />
       <main>{children}</main>
     </>
   );
