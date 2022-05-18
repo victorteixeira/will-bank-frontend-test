@@ -1,3 +1,5 @@
+import { BtnMenu } from '~/components/BtnMenu';
+
 import styles from './Header.module.scss';
 
 export const Header = () => {
@@ -9,6 +11,7 @@ export const Header = () => {
             <img src="/images/marwill.png" style={{ marginRight: '5px' }} />
             <img src="/images/bullet.png" />
           </div>
+          <BtnMenu />
         </div>
         <div className={styles.bar}>
           <p className={styles.line} />
