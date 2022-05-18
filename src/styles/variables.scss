@@ -1,0 +1,39 @@
+$primary-darkest: #C1A502;
+$primary-dark: #F5D100;
+$primary-default: #FFD900;
+$primary-light: #FFEF97;
+
+$neutral-100: #020203;
+$neutral-200: #0B0D12;
+$neutral-300: #15171B;
+$neutral-400: #1F2025;
+$neutral-500: #26272E;
+$neutral-600: #2D2F38;
+$neutral-700: #363842;
+
+$breakpoints: (
+  'sm':  375px,
+  'md': 768px,
+  'lg':  1024px
+) !default;
+
+@mixin media($breakpoint) {
+  $md-width: map-get($breakpoints, 'md');
+  $lg-width: map-get($breakpoints, 'lg');
+
+  @if $breakpoint == sm {
+    @media (max-width: ($md-width - 1)) { @content; }
+  }
+
+  @else if $breakpoint == md {
+    @media (min-width: $md-width) and (max-width: ($lg-width - 1)) { @content; }
+  }
+
+  @else if $breakpoint == lg {
+    @media (min-width: $lg-width) { @content; }
+  }
+
+  @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
