@@ -1,10 +1,12 @@
 import { BtnMenu } from '~/components/BtnMenu';
 
+import { Menu } from '../Menu';
 import styles from './Header.module.scss';
 
 export const Header = () => {
   return (
     <>
+      <Menu />
       <header className={styles.header}>
         <div className={styles.container + ` container`}>
           <div className={styles.logo}>
