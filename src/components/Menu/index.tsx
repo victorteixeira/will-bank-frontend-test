@@ -1,9 +1,13 @@
-import { TypeCharacter } from '~/types';
+import { TypeCharacter, typeStateMenu } from '~/types';
 
 import { Character } from '../Character';
 import styles from './Menu.module.scss';
 
-export const Menu = () => {
+type Props = {
+  stateMenu: typeStateMenu;
+};
+
+export const Menu = ({ stateMenu }: Props) => {
   const characters: Array<TypeCharacter> = [
     { id: 1, image: '/images/teste.png', name: 'Spider Man' },
     { id: 3, image: '/images/teste.png', name: 'Spider Man' },
@@ -11,9 +15,14 @@ export const Menu = () => {
     { id: 4, image: '/images/teste.png', name: 'Spider Man' },
     { id: 5, image: '/images/teste.png', name: 'Spider Man' },
   ];
+
   return (
     <>
-      <div className={`${styles.menu} ${styles.open}`}>
+      <div
+        className={`${styles.menu} ${
+          !stateMenu.openMenu ? '' : `${styles.open}`
+        }`}
+      >
         <ul className={styles.listcharacters}>
           {characters.map(({ id, image, name }) => {
             return (

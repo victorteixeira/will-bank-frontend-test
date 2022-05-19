@@ -1,9 +1,18 @@
+import { typeStateMenu } from '~/types';
+
 import styles from './BtnMenu.module.scss';
 
-export const BtnMenu = () => {
+type Props = {
+  stateMenu: typeStateMenu;
+};
+
+export const BtnMenu = ({ stateMenu }: Props) => {
   return (
     <div className={styles.btnMenu}>
-      <p className={styles.text}>
+      <p
+        className={styles.text}
+        onClick={() => stateMenu.setToggleMenu(!stateMenu.openMenu)}
+      >
         Personagens
         <img src="/images/arrow_down.svg" style={{ marginLeft: '14px' }} />
       </p>

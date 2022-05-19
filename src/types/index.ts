@@ -1,6 +1,11 @@
+export type typeStateMenu = {
+  openMenu: boolean;
+  setToggleMenu: any;
+};
+
 export type TypeCharacter = {
   id: number;
   name: string;
-  description?: string | null;
-  image?: string | null;
+  description?: string | undefined;
+  image?: string | undefined;
 };
