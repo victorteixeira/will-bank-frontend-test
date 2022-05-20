@@ -11,6 +11,7 @@ $neutral-500: #26272E;
 $neutral-600: #2D2F38;
 $neutral-700: #363842;
 
+$sizeContainer: 1344px;
 $breakpoints: (
   'sm':  375px,
   'md': 768px,
@@ -31,6 +32,10 @@ $breakpoints: (
 
   @else if $breakpoint == lg {
     @media (min-width: $lg-width) { @content; }
+  }
+
+  @else if $breakpoint == untilContainer {
+    @media (max-width: $sizeContainer) { @content; }
   }
 
   @else {

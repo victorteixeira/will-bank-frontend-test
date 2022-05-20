@@ -1,6 +1,42 @@
+.btnMenu {
+  cursor: pointer;
+
+  .text {
+    display: none;
+    @include media(lg) {
+      display: block;
+    }
+    color: #FFF;
+    font-weight: 800;
+    line-height: 21px;
+    font-size: 14px;
+
+    .arrow {
+      display: inline-flex;
+      width: 12px;
+      height: 8px;
+      transition: background-image 0.4s linear;
+    }
+  }
+  .bullet {
+    p {
+      display: block;
+
+      @include media(lg) {
+        display: none;
+      }
+
+      width: 28px;
+      height: 2px;
+      background-color: #fff;
+      margin: 6px 0;
+    }
+  }
+}
+
 .menu {
-  position: fixed;
-  top: -200%;
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   background: linear-gradient(180deg, 
@@ -8,11 +44,12 @@
                               rgba(14, 17, 23, 0.92) 96.35%,
                               rgba(14, 17, 23, 0.9) 100%);
   backdrop-filter: blur(12px);
-  padding-top: 97px;
-  transition: top 0.5s;
+  transition: margin-top 0.5s ease-in-out;
+  z-index: -1;
+  margin-top: -100%;
 
   &.open {
-    top: 0;
+    margin-top: 97px;
   }
 
   .listcharacters {

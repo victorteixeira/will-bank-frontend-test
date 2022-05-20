@@ -1,16 +1,20 @@
-import { TypeCharacter, typeStateMenu } from '~/types';
+import { useState } from 'react';
+
+import { TypeCharacter } from '~/types';
 
 import { Character } from '../Character';
 import styles from './Menu.module.scss';
 
-type Props = {
-  stateMenu: typeStateMenu;
-};
+export const Menu = () => {
+  const [activeMenu, setToggleActiveMenu] = useState<boolean>(false);
 
-export const Menu = ({ stateMenu }: Props) => {
+  const handlerBtnMenu = () => {
+    setToggleActiveMenu(!activeMenu);
+  };
+
   const characters: Array<TypeCharacter> = [
     { id: 1, image: '/images/teste.png', name: 'Spider Man' },
-    { id: 3, image: '/images/teste.png', name: 'Spider Man' },
+    { id: 2, image: '/images/teste.png', name: 'Spider Man' },
     { id: 3, image: '/images/teste.png', name: 'Spider Man' },
     { id: 4, image: '/images/teste.png', name: 'Spider Man' },
     { id: 5, image: '/images/teste.png', name: 'Spider Man' },
@@ -18,11 +22,26 @@ export const Menu = ({ stateMenu }: Props) => {
 
   return (
     <>
-      <div
-        className={`${styles.menu} ${
-          !stateMenu.openMenu ? '' : `${styles.open}`
-        }`}
-      >
+      <div className={styles.btnMenu} onClick={handlerBtnMenu}>
+        <p className={styles.text}>
+          Personagens
+          <span
+            className={styles.arrow}
+            style={{
+              marginLeft: '14px',
+              backgroundImage: `url(/images/arrow_${
+                activeMenu ? 'up' : 'down'
+              }.svg)`,
+            }}
+          />
+        </p>
+        <div className={styles.bullet}>
+          <p></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+      <div className={`${styles.menu} ${activeMenu && styles.open}`}>
         <ul className={styles.listcharacters}>
           {characters.map(({ id, image, name }) => {
             return (

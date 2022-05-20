@@ -1,17 +1,10 @@
 @import url('./reset.css');
 
-html { height: 100%;}
+html, body { height: 100%; }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: $neutral-100;
-  transition: background-image 1s ease-in;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
   color: #fff;
-  @include media(lg) {
-    background-size: cover;
-  }
-  height: 100%;
+  background-color: $neutral-100;
 }
 
 * {
@@ -19,15 +12,16 @@ body {
 }
 
 .container {
-  max-width: 1344px;
+  max-width: $sizeContainer;
   width: 100%;
   margin: 0 auto;
 
+  @include media(untilContainer) {
+    padding: 0 45px;
+  }
+
   @include media(sm) {
     padding: 0 24px;
-  }
-  @include media(md) {
-    padding: 0 45px;
   }
 }
 

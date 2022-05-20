@@ -8,15 +8,9 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-  const [openMenu, setToggleMenu] = useState<boolean>(false);
-  const stateMenu: typeStateMenu = {
-    openMenu: openMenu,
-    setToggleMenu: setToggleMenu,
-  };
-
   return (
     <>
-      <Header stateMenu={stateMenu} />
+      <Header />
       <main>{children}</main>
     </>
   );
