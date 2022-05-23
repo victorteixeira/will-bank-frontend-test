@@ -4,11 +4,17 @@ html, body { height: 100%; }
 body {
   font-family: "Poppins", sans-serif;
   color: #fff;
-  background-color: $neutral-100;
+  background-color: $neutral-100 !important;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  text-decoration: none;
 }
 
 .container {
@@ -21,7 +27,83 @@ body {
   }
 
   @include media(sm) {
-    padding: 0 24px;
+    padding: 0 20px;
   }
 }
 
+.ReactModal__Overlay {
+  z-index: 99999;
+}
+.ReactModal__Overlay {
+  background-color: rgb(0, 0, 0, 0.8) !important;
+}
+
+.ReactModal__Content {
+  background-color: $neutral-100 !important;
+
+  border: 1px solid #FFEF97 !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 35px 0 0 35px !important;
+
+  @include media(lg) {
+    width: 70% !important;
+    margin: 0 auto !important;
+  }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 0 0 0 0;
+    }
+    &::-webkit-scrollbar {
+        width: 10px;
+        background: transparent;
+        @include media(sm) {
+          width: 2px;
+        }
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(255, 255, 255, 0.4);
+    }
+
+
+  @include media(sm) {
+    inset: 20px !important;
+  }
+
+  .closeModal {
+    font-family: 'Arial';
+    position: absolute;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    
+    color: #9EA5A9;
+  }
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid $primary-dark; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  &.hide {
+    visibility: hidden;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

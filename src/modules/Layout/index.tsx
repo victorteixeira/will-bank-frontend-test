@@ -1,7 +1,8 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
+import Modal from 'react-modal';
 
-import { Header } from '~/components/Header';
-import { typeStateMenu } from '~/types';
+Modal.setAppElement('#__next');
+import { Header } from '~/modules/Header';
 
 type Props = {
   children: ReactNode;

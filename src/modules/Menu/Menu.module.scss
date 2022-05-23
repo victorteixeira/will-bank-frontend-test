@@ -1,5 +1,6 @@
 .btnMenu {
   cursor: pointer;
+  z-index: 2;
 
   .text {
     display: none;
@@ -45,17 +46,23 @@
                               rgba(14, 17, 23, 0.9) 100%);
   backdrop-filter: blur(12px);
   transition: margin-top 0.5s ease-in-out;
-  z-index: -1;
-  margin-top: -100%;
+  z-index: 1;
+  margin-top: -200%;
+  padding-top: 97px;
 
   &.open {
-    margin-top: 97px;
+    margin-top: 0;
   }
 
   .listcharacters {
     display: flex;
     justify-content: center;
     margin: 51px 0;
+    overflow: auto;
+
+    @include media(sm) {
+      display: -webkit-inline-box;
+    }
 
     li {
       margin: 0 22px;

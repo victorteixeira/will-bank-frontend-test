@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // reactStrictMode: true,
   sassOptions: {
     prependData: '@import "~/styles/variables.scss";',
+  },
+  images: {
+    domains: ['i.annihil.us'],
   },
 };
 
