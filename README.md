@@ -1,8 +1,8 @@
-![VUElAND](./public/images.marwill.svg)
+# Marwill
 
 Este projeto tem como objetivo construir a partir de um protótipo no Figma, um layout consumindo API da MARVEL.
 
-# Visite o site
+## Visite o site
 A aplicação pode ser visitada a qualquer momento pelo link: https://.....
 
 - Publicação realizada pela [Vercel](https://vercel.com/).
