@@ -1,4 +1,4 @@
-![VUElAND](public/images.marwill.svg)
+![VUElAND](./public/images.marwill.svg)
 
 Este projeto tem como objetivo construir a partir de um protótipo no Figma, um layout consumindo API da MARVEL.
 
