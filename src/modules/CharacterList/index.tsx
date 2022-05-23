@@ -39,7 +39,7 @@ export const CharacterList = ({
       <div className={`${styles.list} ${(loading && styles.loading) || ''}`}>
         <ul
           style={{
-            display: `${dataSearch?.length ? 'none' : 'flex'}`,
+            display: `${dataSearch?.length && search.search.length ? 'none' : 'flex'}`,
           }}
         >
           {data?.map(({ id, name, image }) => {
@@ -64,7 +64,7 @@ export const CharacterList = ({
         </ul>
         <ul
           style={{
-            display: `${!dataSearch?.length ? 'none' : 'flex'}`,
+            display: `${!dataSearch?.length && !search.search.length ? 'none' : 'flex'}`,
           }}
         >
           {dataSearch?.map(({ id, name, image }) => {
