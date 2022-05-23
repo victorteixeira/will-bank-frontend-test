@@ -1,0 +1,12 @@
+.align {
+  display: flex;
+  justify-content: right;
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+
+    @include media(sm) {
+      padding: 5px 10px;
+    }
+  }
+}

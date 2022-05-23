@@ -1,0 +1,88 @@
+.characterList {
+  .header {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 110.2%;
+    }
+
+    .search {
+      .input {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 22px;
+        background: transparent;
+        color: white;
+        width: 300px;
+
+        border: 2px solid #F4F5F5;
+        border-radius: 4px;
+        padding: 5px 5px 5px 45px;
+        outline: none;
+        background-image: url(/images/ico_search.png);
+        background-position: 10px center;
+        background-repeat: no-repeat;
+
+        &::placeholder {
+          color: $neutral-700;
+        }
+
+        &:focus {
+          border: 2px solid $primary-default;
+        }
+      }
+    }
+  }
+
+  .list {
+    transition: opacity 0.5s;
+    &.loading {
+      opacity: 0;
+    }
+    
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      @include media(sm) {
+        justify-content: space-between;
+      }
+
+      li {
+        max-width: 200px;
+
+        @include media(lg) {
+            margin-bottom: 50px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        @include media(sm) {
+          max-width: 46%;
+          &:nth-child(odd) {
+            margin-bottom: 20px;
+          }
+        }
+
+        &.seeAll {
+          cursor: pointer;
+          display: flex;
+          border: 1px solid $neutral-700;
+          width: 200px;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
