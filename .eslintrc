@@ -12,6 +12,7 @@
     "eslint-plugin-import-helpers",
     "import",
     "prettier",
+    "testing-library"
   ],
   "extends": [
     "next",
@@ -20,6 +21,16 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier"
+  ],
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
   ],
   "env": {
     "es6": true,

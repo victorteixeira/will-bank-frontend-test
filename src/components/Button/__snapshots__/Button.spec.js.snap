@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Button unchanged 1`] = `
+<div>
+  <button
+    class="button undefined"
+  >
+    OK
+  </button>
+</div>
+`;
