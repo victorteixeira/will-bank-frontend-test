@@ -34,6 +34,18 @@ Executar o projeto em ambiente local de desenvolvimento.
 yarn dev
 ```
 
+### :test_tube: Testes unitários
+Para rodar os testes unitários do projeto projeto.
+```BASH
+yarn test
+```
+
+### :test_tube: Testes E2E
+Para rodar os testes E2E e testes de integração
+```BASH
+yarn e2e
+```
+
 ### :wrench: Build do projeto
 Para realizar o build do projeto.
 ```BASH
