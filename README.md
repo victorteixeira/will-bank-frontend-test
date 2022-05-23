@@ -77,3 +77,9 @@ Contém a lógica de conexão com serviços externos, por exemplo a própria [AP
 
 ### src/styles
 Arquivos de estilos globais e também estilos das páginas são armazenados aqui.
+
+## IDEIAS PARA NOVAS FUTURAS FEATURES
+- Emplementar Redux
+- Melhorias e  no código
+- Implementar otimizações para requisições - CACHE
+- Quebrar mais componentes
